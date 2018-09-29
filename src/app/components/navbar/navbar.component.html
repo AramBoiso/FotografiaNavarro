@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+  <!-- Logo y Titulo -->
+<a class="navbar-brand" routerLink="/">
+  <img src="../../../assets/img/logo.jpg" class="d-inline-block align-top" alt="">         
+</a>
+
+
+    <!-- Boton -->
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"> </span>
+</button>
+
+             <!-- items -->
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<div class="navbar-nav text-center ml-auto mr-auto">
+    <a class="nav-item nav-link aHover" routerLink="paquetes-escolares" routerLinkActive="active">Paquetes Escolares</a>
+    <a class="nav-item nav-link aHover" routerLink="identificación" routerLinkActive="active">Fotografías de Identificación</a>
+    <a class="nav-item nav-link aHover" routerLink="sesiones" routerLinkActive="active">Sesiones</a>
+    <a class="nav-item nav-link aHover" routerLink="restauraciones" routerLinkActive="active">Montajes</a>
+
+    <div class="nav-item dropdown" *ngIf="this.lS.auth"> 
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Mas
+            </a>
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item aHover text-light" routerLink="admin">
+                    <i class="fa fa-user mr-2"></i>
+                    Admin
+                </a>
+                <hr>
+                <a class="dropdown-item  text-light  aHover" routerLink="/sucursal-1">
+                    <i class="fa fa-home  mr-2"></i>
+                    Sucursal 1
+                  </a>
+                  <hr>
+                  <a class="dropdown-item  text-light  aHover" routerLink="/sucursal-2">
+                      <i class="fa fa-home mr-2"></i>
+                      Sucursal 2
+                 </a>
+                <hr>
+                <a class="dropdown-item dH text-light" (click)="this.lS.logOut()">
+                    <i class="fa fa-sign-out mr-2"></i>
+                    Cerrar Sesión
+                  </a>
+            </div>
+        </div>
+      
+</div>        
+</div>
+</nav>
+

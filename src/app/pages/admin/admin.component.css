@@ -1,0 +1,27 @@
+section{
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containers{
+    width: 330px;
+    height: 300px;
+    border-radius: 10px;
+    color: white;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.i{
+    font-size: 100px;
+}
+
+.containers:hover{
+    cursor: pointer;
+}
+

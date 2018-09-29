@@ -1,0 +1,261 @@
+  <!-- Contenedor Uno -->
+  <div class="container"> 
+       
+    <div class="pt-5 pb-3">  
+
+         <h2 class=" display-4 text-center"> 
+             <i class="fa fa-home mr-2"></i>
+             SUCURSAL 1
+         </h2>
+         <hr>
+     </div>  
+ 
+     <!-- Fila de el ForMulario -->
+       <div class="row app shadow-lg">   
+
+            <div class="container-fluid text-center bg-danger text-light mb-2" [hidden]="navi"> 
+                    Sin Conexión
+           </div>
+
+           <!-- Titulo -->
+             <div class="col-sm-12"> 
+                 <h2>{{title}}</h2>
+                 <hr>
+             </div> 
+         <!-- Fin del Titulo -->
+ 
+                  <!-- Inputs -->
+     
+             <div class="form-group col-md-3 ">  
+                 <label for="nombre" class=" control-label">Nombre:</label>
+                 <input type="text"  class="form-control" id="nombre" placeholder="Nombre" [(ngModel)]="compra.nombre" autocomplete="off">
+             </div>
+ 
+             <div class="form-group col-md-3">
+                 <label for="telefono" class=" control-label">Telefono:</label>
+                 <input type="text"  class="form-control" id="telefono" placeholder="Telefono" [(ngModel)]="compra.telefono">
+             </div>
+ 
+             <div class="form-group col-sm-12 col-md-3">
+                 <label for="paquete" class=" control-label">Paquete:</label>
+                 <input type="text"  class="form-control" id="paquete" placeholder="Paquete" [(ngModel)]="compra.paquete">
+             </div>
+ 
+             <div class="form-group col-sm-12 col-md-3">
+                 <label for="precio" class=" control-label">Precio:</label>
+                 <input type="number"  class="form-control" id="precio" placeholder="Precio" [(ngModel)]="compra.costo">
+             </div>
+ 
+             <div class="form-group col-sm-12 col-md-3">
+                 <label for="abono" class=" control-label">Abonó:</label>
+                 <input type="number"  class="form-control" id="abono" placeholder="Abonó" [(ngModel)]="compra.abono">
+             </div>
+ 
+             <div class="form-group col-sm-12 col-md-3" [hidden]="showInput">
+                 <label for="nuevoAbono" class=" control-label">Nuevo Abonó:</label>
+                 <input type="number"  class="form-control" id="nuevoAbono" placeholder="Nuevo Abonó" [(ngModel)]="compra.nuevoAbono">
+             </div>
+ 
+             <div class="form-group col-sm-12 col-md-3">
+                     <label for="archivo" class=" control-label">Archivo:</label>
+                     <input type="date"  class="form-control" id="archivo" [(ngModel)]="compra.archivo">
+             </div>
+
+
+             <div class="form-group col-sm-12 col-md-3">
+                <label for="fecha" class=" control-label">Fecha:</label>
+                <input type="date"  class="form-control" id="fecha" [(ngModel)]="compra.fecha">
+            </div>
+
+            <div class="form-group col-sm-12 col-md-3">
+                <label  class=" control-label " for="tipos">Tipo: </label>
+                <select name="" id="tipos" class="form-control" [(ngModel)]="compra.tipo">   
+                  <option value="Normal">Normal</option>
+                  <option value="Express">Express</option>
+                  <option value="Envio">Envio</option>
+                </select>
+            </div>
+
+            <div class="form-group col-sm-12 col-md-3">
+                <label  class=" control-label " for="mes">Mes: </label>
+                <select name="" id="mes" class="form-control" [(ngModel)]="compra.mes">   
+                  <option value="01">Enero</option>
+                  <option value="02">Febrero</option>
+                  <option value="03">Marzo</option>
+                  <option value="04">Abril</option>
+                  <option value="05">Mayo</option>
+                  <option value="06">Junio</option>
+                  <option value="07">Julio</option>
+                  <option value="08">Agosto</option>
+                  <option value="09">Septiembre</option>
+                  <option value="10">Octubre</option>
+                  <option value="11">Noviembre</option>
+                  <option value="12">Diciembre</option>
+                </select>
+            </div>
+
+            
+            <div class="form-group col-sm-12 col-md-3">
+                <label for="año" class=" control-label">Año:</label>
+                <input type="text" class="form-control" id="año" placeholder="Año" [(ngModel)]="compra.year">
+            </div>
+
+          <!-- Fin de los Inputs -->     
+         
+ 
+                     <!-- BOTONES --> 
+ 
+             <div class="col-sm-12" [hidden]="buttonAdd"> 
+               <button type="submit" class="btn  btn-success btn-block" (click)="add()">
+                   <i class="fa fa-plus"> </i> Agregar Compra
+               </button>
+           </div>
+ 
+           <div class="col-sm-12" [hidden]="buttonToUpDate">
+               <button type="submit" class="btn  btn-success btn-block" (click)="toUpDate()">
+                <i class="fa fa-floppy-o"></i> Guardar
+               </button>
+           </div>
+ 
+           <div class="col-sm-12 mt-2" [hidden]="buttonViewTable">
+               <button  class="btn  btn-primary btn-block" (click)="viewTable()">
+                   <i class="fa fa-chevron-up"></i>  Mostrar Tabla
+               </button>
+           </div>
+ 
+           <div class="col-sm-12 mt-2" [hidden]="buttonOcultTable">
+               <button  class="btn  btn-primary btn-block" (click)="downTable()">
+                   <i class="fa fa-chevron-down"></i>  Oultar Tabla
+               </button>
+           </div>
+ 
+           <div class="col-sm-12 mt-2">
+               <button  class="btn  btn-light btn-block" (click)="clean()">
+                   <i class="fa fa-ban"></i>  Cancelar
+               </button>
+           </div> 
+         <!--Fin de los  BOTONES -->
+         
+       </div>   
+   <!-- Fin de la  Fila de el ForMulario --> 
+
+   
+ 
+    <!-- Fila de la Tabla -->
+ 
+     <div class="row py-5" [hidden]="showTable"> 
+
+            <div class="container filter bg-white  mb-5 mr-2 ml-2 shadow">
+      
+             <h2 class="display-4 text-center"> 
+                <i class="fa fa-filter mr-2"></i>
+                Filtro
+            </h2>
+            <hr>
+                    <div class="row">
+
+                            <div class="col-4">
+                                    <div class="form-group">
+                                          <label for="namef" class=" control-label"><i class="fa fa-user" aria-hidden="true"></i> Nombre:</label>
+                                          <input type="text" class="form-control" id="namef" placeholder="Nombre" [(ngModel)]="name">
+                                   </div>
+                            </div>
+
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label  class=" control-label " for="mes"><i class="fa fa-calendar-o" aria-hidden="true"></i> Mes: </label>
+                                <select name="" id="mes" class="form-control" [(ngModel)]="month">   
+                                <option value="01">Enero</option>
+                                <option value="02">Febrero</option>
+                                <option value="03">Marzo</option>
+                                <option value="04">Abril</option>
+                                <option value="05">Mayo</option>
+                                <option value="06">Junio</option>
+                                <option value="07">Julio</option>
+                                <option value="08">Agosto</option>
+                                <option value="09">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                                </select>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="form-group">
+                                      <label for="año" class=" control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Año:</label>
+                                      <input type="text" class="form-control" id="año" placeholder="Año" [(ngModel)]="year">
+                               </div>
+                        </div>
+
+                            <div class="col-12">
+                                    <button type="submit" class="btn  btn-success btn-block" (click)="filt()">
+                                     <i class="fa fa-floppy-o"></i> Filtrar
+                                    </button>
+                            </div>
+                    </div>
+                    
+                </div>
+ 
+         <div class="col-sm-12 ">
+           <h2 class="">Compras Guardadas</h2>
+           <hr>
+         </div>  
+ 
+         <div class="table-responsive">
+           <table  class="table  table-bordered col-12 table-hover">
+ 
+             <thead class="text-center">
+                 <tr>
+                  <!--   <th>id</th> -->
+                     <th>Sucursal</th>
+                     <th>Fecha</th>
+                     <th>Nombre</th>
+                     <th>Telefono</th>
+                     <th>Paquete</th>
+                     <th>Tipo</th>
+                     <th>Archivo</th>
+                     <th>Precio</th>
+                     <th>Abonó</th>
+                     <th>Falta</th>
+                     <th>Acciones</th>
+                   </tr>
+             </thead>
+ 
+             <tbody class="text-center">
+               <tr *ngFor="let c of filter; let i = index">
+              <!--   <td>{{i}} </td> -->
+                 <td>{{c.sucursal}} </td>
+                 <td>{{c.fecha}}</td>
+                 <td>{{c.nombre}}</td>
+                 <td>{{c.telefono}}</td>
+                 <td>{{c.paquete}}</td>
+                 <td>{{c.tipo}}</td>
+                 <td>{{c.archivo}}</td>
+                 <td>${{c.costo}}</td>
+                 <td>${{c.abono}} </td>
+                 <td>{{c.s}}{{c.restante}}</td>
+                 <td>
+ 
+                   <a class="btn btn-success text-light mt-2 mr-2" (click)="edit(c)" >
+                       <i class="fa fa-pencil"></i> 
+                   </a>
+ 
+                   <a  class="btn btn-danger text-light mt-2 mr-2" (click)="remove(i)">
+                       <i class="fa fa-trash"></i>
+                  </a>
+ 
+                 </td>
+               </tr> 
+             </tbody>
+ 
+           </table>
+         </div>  
+     </div>
+    <!-- Fin de la fila de la tabla -->
+  
+     
+     
+ </div> 
+ <!-- Fin del contenedor uno-->
+ 

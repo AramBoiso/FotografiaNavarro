@@ -1,0 +1,63 @@
+
+  <header> 
+    <div>
+        <h1> FOTOGRAFÍA NAVARRO </h1>
+    </div> 
+  </header>
+
+
+
+  <section class="mt-5 pb-5"> 
+    <div class="row justify-content-center">
+      <div class="col-7">
+          <h2 class="text-center display-4">¿QUINÉS SOMOS?</h2>
+          <hr>
+
+          <p>
+              Somos la empresa fotográfica con mas de 40 años en el mercado. 
+              Nos encargamos de ofrecer tu mejor imagen para tus documentos 
+              oficiales y de identificación. 
+              Somos quien te acompaña en tus eventos importantes, 
+              capturando para ti las imágenes que quieres preservar a través del tiempo. 
+              Somos una empresa de vanguardia que se actualiza constantemente
+               para ofrecerte la mejor calidad en el menor tiempo.
+            </p>
+        <!--
+ 
+         
+         
+        -->
+         
+      </div>
+    </div>
+   
+  </section>
+
+ <!-- <app-corusel></app-corusel> -->
+
+
+ <div class="maps mt-5 mb-5 pb-5">
+
+     <div class="row justify-content-center mb-5">
+
+         <div class="col-10">
+                <h2 class=" text-center"><i class="fa fa-map-marker"></i> SUCURSAL 1</h2>
+                <hr>
+                <agm-map [latitude]="lat"  [longitude]="lng"  [zoom]="zoom" [zoomControl]="false">
+                        <agm-marker [latitude]="markers[0].lat" [longitude]="markers[0].lng" > </agm-marker> 
+                </agm-map>     
+         </div>
+
+     </div>
+
+     <div class="row justify-content-center mt-5">
+            <div class="col-10">
+                    <h2 class=" text-center"><i class="fa fa-map-marker"></i> SUCURSAL 2</h2>
+                    <hr>
+                    <agm-map [latitude]="lat2" [longitude]="lng2" [zoom]="zoom2" [zoomControl]="false">
+                            <agm-marker [latitude]="markers[1].lat" [longitude]="markers[1].lng"></agm-marker>
+                    </agm-map>
+             </div>
+     </div>
+  
+ </div>

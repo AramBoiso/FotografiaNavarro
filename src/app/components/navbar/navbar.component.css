@@ -1,0 +1,24 @@
+nav{
+ /*   background-color: rgb(100, 100, 100) !important;*/
+}
+.aHover:hover{
+    background-color: gray;
+    cursor: pointer;
+    color: white;
+}
+
+img{
+    width: 185px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.dH:hover{
+    background-color: #dc3545;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+}
+
+
+
